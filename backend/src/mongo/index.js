@@ -1,5 +1,8 @@
 import mongoose from "mongoose";
 import * as Model from "../model"
+
+import pubsub from '../pubsub'
+
 let logger = require("../utils/logger");
 
 const modelExists =()=>{
@@ -419,6 +422,9 @@ connection.once("open", async function () {
           break;
       case 'delete':
           console.log('User deleted:', change.documentKey);
+
+          pubsub.publish('USER_CONNECTED', { userConnected: 'A user connected + delete : ' + Math.floor(Math.random() * 100) });
+
           break;
       default:
           console.log('Unknown operation type:', change.operationType);
