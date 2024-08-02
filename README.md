@@ -1,10 +1,13 @@
 Frontend
   - react js
+  # 02/Aug/2024
+  - custom react-table sort, paging, search with field, going to page, show with size
 
 Backend
   - Appollo version 4
     - check connect, disconnect client 
-    - ระบบ member
+    - system member
+    - ทำ mongo replset ให้สามารถ detect row change Stream กรณีมีการ ลบ user เราสามารถ detect แล้ว force logout ได้เลย 
 
 
 # mlm
